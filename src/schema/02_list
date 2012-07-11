@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo 'val_02_00_list'
+echo 'val_02_01_list'
+echo 'val_02_02_list'
+echo 'val_02_03_list'
+echo 'val_02_04_list'
+echo 'val_02_05_list'
+
+exit 0
+

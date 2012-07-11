@@ -1,0 +1,463 @@
+#!/usr/bin/env miso
+#
+#
+#  Form 'chuser' schema file.
+#
+
+#  $Id: chuser.miso,v 1.7 2011/11/17 20:17:42 netmqorg Exp mqalton $
+
+FORM:
+    title = 'Change / Show Characteristics of a User'
+
+FIELD:
+    label      = 'User NAME'
+    type       = TEXT
+    width      = 64
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[a-z][a-z0-9_]{1,7}'
+    echo       = TRUE
+    find       = '/usr/bin/whoami'
+    edit       = FALSE
+    constant   = TRUE
+    verify     = '/opt/bin/verify'
+#    value      = 'zma0472'
+
+FIELD:
+    label      = 'User ID'
+    type       = INTEGER
+    width      = 5
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+#    pattern    = ''
+    echo       = TRUE
+    find       = 'user_id'
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Initial PASSWORD (characters will not echo)'
+    type       = TEXT
+#    width      = 5
+    max_values = 1
+    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = ''
+    echo       = FALSE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+#    list       = ''
+
+FIELD:
+    label      = 'Re-Enter Initial PASSWORD'
+    type       = TEXT
+#    width      = 5
+    max_values = 1
+    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = ''
+    echo       = FALSE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+#    list       = ''
+
+FIELD:
+    label      = 'Administrative USER?'
+    type       = BOOLEAN
+    value      = NO
+#    width      = 5
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = ''
+    echo       = TRUE
+#    find       = ''
+    edit       = FALSE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Primary GROUP'
+    type       = TEXT
+#    width      = 5
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+#    pattern    = ''
+    echo       = TRUE
+    find       = '/usr/bin/groups'
+    edit       = FALSE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+    list       = 'list_groups'
+
+FIELD:
+    label      = 'Group SET'
+    type       = TEXT
+#    width      = 5
+    max_values = 65535
+    min_values = 0
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[a-z][a-z0-9_]{1,7}'
+    echo       = TRUE
+    find       = '/usr/bin/groups'
+    edit       = FALSE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+    list       = 'list_groups'
+
+FIELD:
+    label      = 'Administrative GROUPS'
+    type       = TEXT
+#    width      = 5
+    max_values = 65535
+    min_values = 0
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[a-z][a-z0-9_]{1,7}'
+    echo       = TRUE
+#    find       = ''
+    edit       = FALSE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'ROLES'
+    type       = TEXT
+#    width      = 5
+    max_values = 65535
+    min_values = 0
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[a-z][a-z0-9_]{1,7}'
+    echo       = TRUE
+#    find       = ''
+    edit       = FALSE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Another user can SU TO USER?'
+    type       = BOOLEAN
+    value      = YES
+#    width      = 5
+#    max_values = 65535
+#    min_values = 0
+#    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[a-z][a-z0-9_]{1,7}'
+#    echo       = TRUE
+#    find       = ''
+#    edit       = FALSE
+#    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'SU GROUPS'
+    type       = TEXT
+#    width      = 5
+    max_values = 65535
+    min_values = 0
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[a-z][a-z0-9_]{1,7}'
+    echo       = TRUE
+#    find       = ''
+    edit       = FALSE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'HOME directory'
+    type       = TEXT
+    width      = 256
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+#    pattern    = '/home/[a-z][a-z0-9_]{1,7}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Initial PROGRAM'
+    type       = TEXT
+    width      = 256
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+#    pattern    = '/usr/bin/[a-z][a-z0-9_/]{1,7}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'User INFORMATION'
+    type       = TEXT
+    width      = 32
+    max_values = 1
+    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[A-Za-z 0-9]{1,31}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+    value      = ''
+
+FIELD:
+    label      = 'EXPIRATION date (MMDDhhmmyy)'
+    type       = INTEGER
+    width      = 10
+    max_values = 1
+    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Is this user ACCOUNT LOCKED?'
+    type       = BOOLEAN
+    value      = FALSE
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+#    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'User can LOGIN?'
+    type       = BOOLEAN
+    value      = TRUE
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+#    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'User can LOGIN REMOTELY(rsh,tn,rlogin)?'
+    type       = BOOLEAN
+    value      = TRUE
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+#    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'FAILED LOGIN limit'
+    type       = INTEGER
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+#    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Login AUTHENTICATION GRAMMAR'
+    type       = TEXT
+    width      = 32
+    max_values = 1
+    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '.*'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+    value      = 'SYSTEM'
+
+FIELD:
+    label      = 'Valid TTYs'
+    type       = TEXT
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+    value      = ''
+
+FIELD:
+    label      = 'Days to WARN USER before password expires'
+    type       = INTEGER
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+#    value      = ''
+
+FIELD:
+    label      = 'Password CHECK METHODS'
+    type       = TEXT
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+#    value      = ''
+
+FIELD:
+    label      = 'Password DICTIONARY FILES'
+    type       = TEXT
+#    width      = 10
+    max_values = 64
+    min_values = 0
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+#    value      = ''
+    list       = '/opt/bin/list_dict_files'
+
+FIELD:
+    label      = 'NUMBER OF PASSWORDS before reuse'
+    type       = INTEGER
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+#    value      = ''
+
+FIELD:
+    label      = 'WEEKS before password reuse'
+    type       = INTEGER
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+#    value      = ''
+
+FIELD:
+    label      = 'WEEKS between password EXPIRATION and LOCKOUT'
+    type       = INTEGER
+#    width      = 10
+#    max_values = 1
+#    min_values = 1
+    require    = FALSE
+#    floor      =
+#    ceiling    =
+#    pattern    = '[0-9]{10}'
+    echo       = TRUE
+#    find       = ''
+    edit       = TRUE
+    constant   = FALSE
+    verify     = ''
+#    value      = ''
+

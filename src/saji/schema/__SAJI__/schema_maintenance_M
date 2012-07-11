@@ -1,0 +1,22 @@
+#!/usr/bin/env miso
+
+#
+#  Saji schema maintenance menu schema.
+#
+
+#  $Id$
+
+MENU:
+    title = 'Miso Schema Maintenance'
+
+ITEM:
+    label = 'ADD a New Schema'
+    output = 'add_schema'
+
+ITEM:
+    label = 'DELETE an Existing Schema'
+    output = 'delete_schema'
+
+ITEM:
+    label = 'Change/Show Characteristics of a Schema'
+    output = 'change_schema'

@@ -1,0 +1,50 @@
+#!/usr/bin/env miso
+#
+#
+#  Form 'change_schema' schema file.
+#
+
+#  $Id$
+
+FORM:
+    title = 'Change / Show Characteristics of a Miso Schema'
+
+FIELD:
+    label      = 'Schema NAME'
+    type       = TEXT
+    default    = ''
+    width      = 64
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+    pattern    = '[a-z][a-z0-9_]{1,63}'
+    echo       = TRUE
+    find       = '/usr/bin/whoami'
+    edit       = FALSE
+    constant   = TRUE
+    verify     = '/opt/bin/verify'
+    value      = ''
+
+FIELD:
+    label      = 'User ID'
+    type       = INTEGER
+#    default    = ''
+    width      = 5
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+#    pattern    = ''
+    echo       = TRUE
+    find       = 'user_id'
+    edit       = TRUE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Initial PASSWORD (characters will not echo)'
+    type       = TEXT
+    default    = ''

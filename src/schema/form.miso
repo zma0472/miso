@@ -1,0 +1,44 @@
+
+#
+#  Development FORM configuration file.
+#
+
+#  $Id: form.miso,v 1.2 2011/10/18 22:02:45 netmqorg Exp $
+
+FORM:
+    title = 'Development FORM'
+
+FIELD:
+    label      = 'First Field (TEXT)'
+    type       = TEXT
+    default    = 'First Field Default Value'
+    width      = 64
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+    pattern    = '.*'
+    echo       = TRUE
+#    find       =
+    edit       = TRUE
+    constant   = FALSE
+    verify     = '/opt/bin/verify'
+
+FIELD:
+    label      = 'Second Field (INTEGER)'
+    type       = INTEGER
+    default    = 42
+    width      = 16
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+    floor      = 0
+    ceiling    = 1024
+#    pattern    = '.*'
+    echo       = TRUE
+#    find       =
+    edit       = TRUE
+    constant   = FALSE
+    verify     = '/opt/bin/verify'
+

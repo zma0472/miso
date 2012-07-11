@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo 'val_02_find'
+
+exit 0
+

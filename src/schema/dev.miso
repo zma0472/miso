@@ -1,0 +1,80 @@
+#
+#  $Id$
+#
+
+#
+#  Development schema for MISO.
+#
+
+FORM:
+    title = 'Test Schema Title'
+
+FIELD:
+    label = '00 T 12 1 1 F - - - T - T F - 00_value'
+    type  = TEXT
+    width = 12
+    max_values = 1
+    min_values = 1
+    require = FALSE
+#   floor =
+#   ceiling =
+#   pattern =
+    echo = TRUE
+#   find =
+    edit = TRUE
+    constant = FALSE
+#   verify =
+    value = '00_value'
+
+FIELD:
+    label = '01 T  - - - F - - - T - F T - 01_value'
+    type  = TEXT
+#   width = 12
+#   max_values = 1
+#   min_values = 1
+    require = FALSE
+#   floor =
+#   ceiling =
+#   pattern =
+    echo = TRUE
+#   find =
+    edit = FALSE
+    constant = TRUE
+#   verify =
+    value = '01_value'
+
+FIELD:
+    label = '02 T 12 1 1 T - - - T - F F - 02_value'
+    type  = TEXT
+#   width = 12
+    max_values = 1
+    min_values = 1
+    require = TRUE
+#   floor =
+#   ceiling =
+#   pattern =
+    echo = TRUE
+    find = '02_find'
+    list = '02_list'
+    edit = FALSE
+    constant = FALSE
+#   verify =
+    value = '02_value'
+
+FIELD:
+    label      = 'Primary GROUP'
+    type       = TEXT
+#    width      = 5
+    max_values = 1
+    min_values = 1
+    require    = TRUE
+#    floor      =
+#    ceiling    =
+#    pattern    = ''
+    echo       = TRUE
+    find       = '/usr/bin/groups'
+    edit       = FALSE
+    constant   = FALSE
+#    verify     = '/opt/bin/verify'
+    list       = 'list_groups'
+

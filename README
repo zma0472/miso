@@ -1,0 +1,8 @@
+
+Miso  is  a  small utility which allows programmers to create menus and
+forms for use in interactive scripts. Miso reads a simple  schema  con‐
+tained  in  a file and uses the curses library to create a menu or form
+as defined by the schema objects.
+
+Miso writes all information obtained from the user to stderr.
+

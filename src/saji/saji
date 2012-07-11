@@ -1,0 +1,106 @@
+#!/usr/bin/env sh
+
+#
+#  General purpose iterative script for use with Miso.
+#
+
+#  $Id: saji,v 1.1 2012/02/22 23:38:43 mqalton Exp $
+
+default_saji_home=/opt/saji/schema
+default_saji_app=__SAJI__
+default_saji_schema=main
+
+: ${SAJI_HOME:="${default_saji_home}"}
+: ${SAJI_APP:="${default_saji_app}"}
+: ${SAJI_SCHEMA:="${default_saji_schema}"}
+
+cd "${SAJI_HOME}/${SAJI_APP}"
+if [[ 0 -ne $? ]]
+then
+    echo "SAJI: ERROR: Chdir ${SAJI_HOME}/${SAJI_APP} FAIL." >&2; exit 2
+else
+    if test ! -r ${SAJI_SCHEMA}_M
+    then
+        pwd
+        echo "SAJI: ERROR: Read ${SAJI_SCHEMA}_M FAIL." >&2; exit 2
+    fi
+fi
+
+declare -a stack
+
+BP=255; SP=$BP; action="$SAJI_SCHEMA"; scratch="tmp/saji.$$"
+
+push()
+{
+ let "SP -= 1"; stack[$SP]=${action}; return
+}
+
+pop()
+{
+ if [ "$SP" -ne "$BP" ]
+ then
+     action=${stack[$SP]}
+     let "SP += 1"
+ fi
+ return
+}
+
+while [[ 1 -eq 1 ]]
+do
+    if [[ -x ${action}_M ]]
+    then
+        ./${action}_M 2>${scratch}; result=$?
+        if [[ 0 -eq $result ]]
+        then
+            push $action
+            action=$(cat ${scratch}); rm -f ${scratch}
+        elif [[ 3 -eq $result ]]
+        then
+            rm -f "${scratch}"
+            if [ "$SP" -eq "$BP" ]
+            then
+                break
+            else
+                pop; continue
+            fi
+        elif [[ 10 -eq $result ]]
+        then
+            rm -f ${scratch}; exit 0
+        else
+            rm -f ${scratch}; exit ${result}
+        fi
+    elif [[ -x "${action}_F" ]]
+    then
+        if [[ -x "${action}" ]]
+        then
+            ./${action}_F 2>${scratch}; result=$?
+            if [[ 0 -eq $result ]]
+            then
+                ./"${action}" "${scratch}"; read inch
+            elif [[ 3 -eq $result ]]
+            then
+                rm -f ${scratch}
+                if [[ "$SP" -eq "$BP" ]]
+                then
+                    break
+                else
+                    pop; continue
+                fi
+            elif [[ 10 -eq $result ]]
+            then
+                rm -f ${scratch}; exit 0
+            else
+                rm -f ${scratch}; exit $result
+            fi
+        else
+            echo "ERROR: Form ${action}.form: no corresponding action." >&2
+                read foo; pop
+        fi
+    elif [[ -x "${action}" ]]
+    then
+        sh -c "./${action}"; read foo; pop; continue
+    else
+        echo "ERROR: Invalid reference: ${action}"; read foo; pop
+    fi
+done
+

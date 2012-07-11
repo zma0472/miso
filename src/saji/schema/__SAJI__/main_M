@@ -1,0 +1,20 @@
+#!/usr/bin/env miso
+
+#  $Id$
+
+#
+#  Saji DEFAULT main menu schema.
+#
+
+#  $Id$
+
+MENU:
+    title = 'Miso Main Menu'
+
+ITEM:
+    label = 'Schema Maintenance'
+    output = 'schema_maintenance'
+
+ITEM:
+    label = 'HELP with Miso'
+    output = 'miso_help'

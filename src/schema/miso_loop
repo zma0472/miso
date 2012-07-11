@@ -1,0 +1,74 @@
+#!/bin/sh
+
+#
+# Copyright (c) 2011
+# Matthew and Janice Alton. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+# notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+# notice, this list of conditions and the following disclaimer in the
+# documentation and/or other materials provided with the distribution.
+# 3. Neither the names of the copyright holders nor the names of any
+# contributors may be used to endorse or promote products derived from this
+# software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+# TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+
+#  $Id: miso_loop,v 1.2 2011/10/06 21:31:32 mqalton Exp $
+
+prefix=/opt/miso/etc
+cmd_file=/tmp/miso.$$
+start_cmd=default.miso
+output_file=/tmp/miso.out.$$
+
+if [ -x ${prefix}/${start_cmd} ]
+then
+    set ${start_cmd}
+
+    while [ 1 ]
+    do
+        if [ 0 -eq $# ]
+        then
+            exit 0
+        elif [ -x "${prefix}/$1" ]
+        then 
+            "${prefix}/$1" 2>${cmd_file} ; rval=$?
+            next_cmd=$(cat $cmd_file | head -1 | awk '{print $1}')
+            rm -f ${cmd_file}
+            if [ 10 -eq $rval ]
+            then
+                exit 0  # The user selected F10
+            elif [ 3 -eq $rval ]
+            then
+                shift  # The user selected F3
+            elif [ 2 -eq $rval ]
+            then
+                exit 2
+            elif [ 0 -eq $rval ]
+            then
+                set $next_cmd $@
+            fi
+        else
+            $1 > ${output_file} 2>&1
+            less ${output_file}; rm -f ${output_file}
+            shift;
+        fi
+    done
+fi
+exit 0
+

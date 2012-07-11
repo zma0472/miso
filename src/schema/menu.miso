@@ -1,0 +1,154 @@
+
+#
+#  Development MENU configuration file.
+#
+
+#  $Id: menu.miso,v 1.1 2011/10/11 20:13:44 mqalton Exp $
+
+MENU:
+    title = 'System Management'
+
+ITEM:
+    label = 'Software Installation and Maintenance'
+    output = 'install'
+
+ITEM:
+    label = 'Software License Managemant'
+    output = 'licenses'
+
+ITEM:
+    label = 'Manage Editions'
+    output = 'editions'
+
+ITEM:
+    label = 'Devices'
+    output = 'dev'
+
+ITEM:
+    label = 'System Storage Management (Physical & Logical Storage)'
+    output = 'storage'
+
+ITEM:
+    label = 'Security & Users'
+    output = 'security'
+
+ITEM:
+    label = 'Communications Applications and Services'
+    output = 'commo'
+
+ITEM:
+    label = 'Workload Partition Administration'
+    output = 'wpar'
+
+ITEM:
+    label = 'Print Spooling'
+    output = 'spooloer_choice'
+
+ITEM:
+    label = 'Advanced Accounting'
+    output = 'aacct'
+
+ITEM:
+    label = 'Problem Determination'
+    output = 'problem'
+
+ITEM:
+    label = 'Performance & Resource Scheduling'
+    output = 'performance'
+
+ITEM:
+    label = 'System Environments'
+    output = 'system'
+
+ITEM:
+    label = 'Processes & Subsystems'
+    output = 'src'
+
+ITEM:
+    label = 'Applications'
+    output = 'apps'
+
+ITEM:
+    label = 'Installation Assistant'
+    output = 'assist'
+
+ITEM:
+    label = 'Electronic Service Agent'
+    output = 'esa_main'
+
+ITEM:
+    label = 'Cluster Systems Management'
+    output = 'csm'
+
+ITEM:
+    label = 'Using MISO'
+    output = 'using'
+
+ITEM:
+    label = 'Item #19 Label'
+    output = 'ITEM_19_OUTPUT'
+
+ITEM:
+    label = 'Item #20 Label'
+    output = 'ITEM_20_OUTPUT'
+
+ITEM:
+    label = 'Item #21 Label'
+    output = 'ITEM_21_OUTPUT'
+
+ITEM:
+    label = 'Item #22 Label'
+    output = 'ITEM_22_OUTPUT'
+
+ITEM:
+    label = 'Item #23 Label'
+    output = 'ITEM_23_OUTPUT'
+
+ITEM:
+    label = 'Item #24 Label'
+    output = 'ITEM_24_OUTPUT'
+
+ITEM:
+    label = 'Item #25 Label'
+    output = 'ITEM_25_OUTPUT'
+
+ITEM:
+    label = 'Item #26 Label'
+    output = 'ITEM_26_OUTPUT'
+
+ITEM:
+    label = 'Item #27 Label'
+    output = 'ITEM_27_OUTPUT'
+
+ITEM:
+    label = 'Item #28 Label'
+    output = 'ITEM_28_OUTPUT'
+
+ITEM:
+    label = 'Item #29 Label'
+    output = 'ITEM_29_OUTPUT'
+
+ITEM:
+    label = 'Item #30 Label'
+    output = 'ITEM_30_OUTPUT'
+
+ITEM:
+    label = 'Item #31 Label'
+    output = 'ITEM_31_OUTPUT'
+
+ITEM:
+    label = 'Item #32 Label'
+    output = 'ITEM_32_OUTPUT'
+
+ITEM:
+    label = 'Item #33 Label'
+    output = 'ITEM_33_OUTPUT'
+
+ITEM:
+    label = 'Item #34 Label'
+    output = 'ITEM_34_OUTPUT'
+
+ITEM:
+    label = 'Item #35 Label'
+    output = 'ITEM_35_OUTPUT'
+

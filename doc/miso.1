@@ -1,0 +1,115 @@
+.\" Copyright (C) 2011,2012 Matthew and Janice Alton
+.\" 
+.\" This file is part of Miso.
+.\" 
+.\" Miso is free software: you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation, either version 3 of the License, or
+.\" (at your option) any later version.
+.\" 
+.\" Miso is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\" 
+.\" You should have received a copy of the GNU General Public License
+.\" along with Miso.  If not, see <http://www.gnu.org/licenses/>.
+.\" 
+.\" $Id: miso.1,v 1.13 2012/05/22 20:55:05 zma0472 Exp $
+.\"
+.TH MISO 1  "March 21, 2012" "version 0.9" "USER COMMANDS"
+.SH NAME
+miso \- Menus In, Strings Out
+.SH SYNOPSIS
+miso [\-h] [\-v] [\-c] [\-F field_separator] [\-V value_separator]
+     [\-i initial_values] [\-f values_path] [\-l log_path]
+     [\-s shell] [ file ]
+.SH DESCRIPTION
+Miso is a small utility which allows programmers to create menus and forms for
+use in interactive scripts. Miso reads a simple schema contained in a file and
+uses the curses library to create a menu or form as defined by the schema
+objects.
+.PP
+Miso writes all information obtained from the user to stderr.
+.SH OPTIONS
+.TP
+\-h
+display a short help text
+.TP
+\-v
+display version information
+.TP
+\-c
+check schema syntax only
+.TP
+\-F field_separator
+specify field separation character
+.TP
+\-V value_separator
+specify value separation character
+.TP
+\-i initial_values
+provide initial values string
+.TP
+\-f values_path
+provide pathname of file containing initial values string
+.TP
+\-l log_path
+provide pathname of log file
+.TP
+\-s shell
+provide pathname of shell program
+.TP
+file
+provide pathname of schema file
+.SH ENVIRONMENT
+.TP
+MISO_SCHEMA
+pathname of schema file
+.TP
+MISO_OFS
+character to be used as the output field separator
+.TP
+MISO_OVS
+character to be used as the output value separator
+.TP
+MISO_VALUES
+string containing the initial value of each field in a FORM
+.TP
+MISO_VALUE_PATH
+pathname of an input file containing the initial value of each field in a FORM
+.TP
+MISO_LOG_PATH
+pathname of the MISO operational log file
+.SH FILES
+.TP
+/opt/etc/miso.conf
+.SH EXAMPLES
+Please see the example code contained in the /doc/examples directory of the
+Miso distribution.
+.PP
+.SH EXIT STATUS
+The exit status is 0 if the form or menu is correctly filled out and submitted
+by the user. An exit status of 2 indicates an error condition.  An exit status
+of 3 indicates that the user chose to cancel the session without submitting the
+object. An exit status of 10 indicates that the user wishes to terminate both
+the miso session and the calling script.
+.SH AUTHOR
+Matthew Alton (matthew.alton@gmail.com)
+.SH SEE ALSO
+miso.conf(5) dialog(1) newt(1) whiptail(1)
+.SH COPYRIGHT
+Copyright (c) 2011,2012 Matthew and Janice Alton.
+
+Miso is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+.PP
+Miso is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License
+along with Miso.  If not, see <http://www.gnu.org/licenses/>.
