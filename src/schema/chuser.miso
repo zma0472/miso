@@ -104,7 +104,7 @@ FIELD:
 #    ceiling    =
 #    pattern    = ''
     echo       = TRUE
-    find       = '/usr/bin/groups'
+    find       = 'schema/primary_group'
     edit       = FALSE
     constant   = FALSE
 #    verify     = '/opt/bin/verify'
@@ -121,7 +121,7 @@ FIELD:
 #    ceiling    =
 #    pattern    = '[a-z][a-z0-9_]{1,7}'
     echo       = TRUE
-    find       = '/usr/bin/groups'
+    find       = 'schema/group_list'
     edit       = FALSE
     constant   = FALSE
 #    verify     = '/opt/bin/verify'

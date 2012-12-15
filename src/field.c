@@ -347,7 +347,7 @@ io_field(int row, int interact, field_t *f)
          } else {
              return (KEY_F(2));
          }
-     } else if ( isprint(c) ) {
+     } else if ( isprint(c) && (c != field_separator) ) {
          if ( (strlen(f->buf) < f->width) && (0 == f->constant) ) {
              unsigned int i = 0;
              if ( (INTEGER_T == f->type) && !isdigit(c) ) {

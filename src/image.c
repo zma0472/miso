@@ -70,14 +70,16 @@ image(void)
              } else if ( KEY_F(2) == c ) {
                  break;
              } else if ( KEY_ENTER == c ) {
+                 (void)fprintf(log_file, "\n");
                  for ( i = 0; i < max_y; i++ ) {
                      for ( j = 0; j < max_x; j++ ) {
                          if ( isprint(ch = (A_CHARTEXT & mvinch(i, j))) ) {
                              (void)fprintf(log_file, "%c", (int)ch);
                          }
                      }
+                     (void)fprintf(log_file, "\n");
                  }
-                 (void)fprintf(log_file, "\n");
+                 (void)fprintf(log_file, "\n"); (void)fflush(log_file);
                  delwin(img_w); return (0);
              }
          }
