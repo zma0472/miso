@@ -108,7 +108,7 @@ FIELD:
     edit       = FALSE
     constant   = FALSE
 #    verify     = '/opt/bin/verify'
-    list       = 'list_groups'
+    list       = 'schema/list_groups'
 
 FIELD:
     label      = 'Group SET'
@@ -125,7 +125,7 @@ FIELD:
     edit       = FALSE
     constant   = FALSE
 #    verify     = '/opt/bin/verify'
-    list       = 'list_groups'
+    list       = 'schema/list_groups'
 
 FIELD:
     label      = 'Administrative GROUPS'

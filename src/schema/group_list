@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-: ${MISO_OVS:=' '}
+: ${MISO_OVS:=','}
 
 groups | tr -s '[:blank:]' "$MISO_OVS"
 

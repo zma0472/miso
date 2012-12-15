@@ -19,7 +19,7 @@ FIELD:
     require    = TRUE
 #    floor      =
 #    ceiling    =
-    pattern    = '[a-z][a-z0-9_]{0,31}'
+#    pattern    = '[a-z][a-z0-9_]{0,31}'
     echo       = TRUE
 #    find       = ''
     edit       = TRUE
@@ -37,7 +37,7 @@ FIELD:
     require    = TRUE
 #    floor      =
 #    ceiling    =
-    pattern    = '[a-z][a-z0-9_]{0,31}'
+#    pattern    = '[a-z][a-z0-9_]{0,31}'
     echo       = TRUE
 #    find       = ''
     edit       = TRUE
