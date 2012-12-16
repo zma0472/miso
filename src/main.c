@@ -91,7 +91,11 @@ main(int argc, char **argv)
  if ( lex(schema) < 0 ) {
      ERR("Lexical error.");
  } else {
-     if ( NULL != menu_title ) {
+     if ( check_only ) {
+         DBG("check_only=%d", check_only);
+         (void)fprintf(stderr, "%s OK\n", schema);
+         val=0;
+     } else if ( NULL != menu_title ) {
          DBG("menu_title='%s'", menu_title);
          if ( (0 == (val = menu())) || (1 == val) ) {
              DBG("val=%d", val);
