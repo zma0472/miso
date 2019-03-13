@@ -32,7 +32,7 @@
 
 #ifndef LINT
 static char rcsid[] =
-"$Id: field.c,v 1.31 2012/05/22 20:31:28 zma0472 Exp $";
+"$Id: field.c,v 1.33 2017/07/21 18:21:15 zma0472 Exp $";
 #endif  /*  !defined LINT  */
 
 static int
@@ -127,7 +127,6 @@ int
 new_field(void)
 {
  field_t **t_p = NULL;
- char     *s_p = NULL;
  int rgx_flags = (REG_EXTENDED|REG_ICASE|REG_NOSUB|REG_NEWLINE);
 
  t_p = realloc(field, (field_count+1)*sizeof(field_t *));
@@ -145,7 +144,6 @@ new_field(void)
  field[field_count]->require     = DEFAULT_FIELD_REQUIRE;
  field[field_count]->floor       = DEFAULT_FIELD_FLOOR;
  field[field_count]->ceiling     = DEFAULT_FIELD_CEILING;
- field[field_count]->pattern     = DEFAULT_FIELD_PATTERN;
  field[field_count]->echo        = DEFAULT_FIELD_ECHO;
  field[field_count]->find        = DEFAULT_FIELD_FIND;
  field[field_count]->edit        = DEFAULT_FIELD_EDIT;
@@ -169,11 +167,17 @@ new_field(void)
  if ( NULL == field[field_count]->ptn_cmp ) {
      goto ptn_cmp_fail;
  }
+ field[field_count]->pattern = strdup(DEFAULT_FIELD_PATTERN);
+ if ( NULL == field[field_count]->pattern ) {
+     goto pattern_fail;
+ }
  if ( regcomp(field[field_count]->ptn_cmp,
               field[field_count]->pattern, rgx_flags) < 0 ) {
      goto rgx_fail;
  }
  field_count++; return (0);
+
+pattern_fail:
 
 rgx_fail:
  free(field[field_count]->ptn_cmp); field[field_count]->ptn_cmp = NULL;

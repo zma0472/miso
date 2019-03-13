@@ -26,7 +26,7 @@
 
 #ifndef LINT
 static char rcsid[] =
-"$Id: image.c,v 1.6 2012/05/22 20:31:28 zma0472 Exp $";
+"$Id: image.c,v 1.7 2017/06/25 18:00:25 zma0472 Exp $";
 #endif  /*  !defined LINT  */
 
 #define MIN_Y 24

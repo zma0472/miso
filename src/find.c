@@ -28,6 +28,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <libgen.h>
+#include <signal.h>
 
 #include "miso.h"
 #include "log.h"
@@ -40,7 +41,7 @@
 
 #ifndef LINT
 static char rcsid[] =
-"$Id: find.c,v 1.7 2012/05/22 20:31:28 zma0472 Exp $";
+"$Id: find.c,v 1.8 2017/07/18 18:36:18 zma0472 Exp $";
 #endif  /*  !defined LINT  */
 
 void

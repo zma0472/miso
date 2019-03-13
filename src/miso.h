@@ -18,7 +18,7 @@
  * along with Miso.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*  $Id: miso.h,v 2.67 2012/05/22 20:31:28 zma0472 Exp $  */
+/*  $Id: miso.h,v 2.70 2017/07/21 15:21:51 zma0472 Exp $  */
 
 #ifndef _MISO_H
 
@@ -32,9 +32,14 @@
 
 #define VERSION_MAJOR  0
 #define VERSION_MINOR  9
-#define VERSION_PATCH 12
+#define VERSION_PATCH 15
 
 #define DEFAULT_SCHEMA "/opt/etc/miso.conf"
+
+/*  Fix for Tru64 Unix. */
+#ifdef __alpha
+#define getmaxyx(w,y,x)	((y) = getmaxy(w), (x) = getmaxx(w))
+#endif /*  defined __alpha  */
 
 /*  Values assumed by 'type' member of field_t struct.  */
 #define NONE_T    0

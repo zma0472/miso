@@ -25,7 +25,7 @@
 
 #ifndef LINT
 static char rcsid[] =
-"$Id: main.c,v 1.17 2012/05/22 20:31:28 zma0472 Exp $";
+"$Id: main.c,v 1.18 2017/06/25 18:03:13 zma0472 Exp $";
 #endif  /*  !defined LINT  */
 
 char *schema = DEFAULT_SCHEMA;

@@ -18,7 +18,7 @@
  * along with Miso.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*  $Id: log.h,v 1.5 2012/05/22 20:31:28 zma0472 Exp $  */
+/*  $Id: log.h,v 1.6 2017/07/18 18:35:20 zma0472 Exp $  */
 
 #if !defined(_LOG_H)
 
@@ -75,7 +75,7 @@ do {                                                                          \
                                    log_label, getpid(), __FILE__, __LINE__);  \
         snprintf(buf+strlen(buf), LOG_BUFSIZ-strlen(buf),  __VA_ARGS__);      \
         snprintf(buf+strlen(buf), LOG_BUFSIZ-strlen(buf),  "\n");             \
-        fprintf(log_file, buf); fflush(log_file);                             \
+        fprintf(log_file, "%s", buf); fflush(log_file);                       \
         errno = errno_save;                                                   \
     }                                                                         \
 } while (0)
@@ -97,7 +97,7 @@ do {                                                                          \
         snprintf(buf+strlen(buf), ERR_BUFSIZ-strlen(buf),  " errno=%u (%s)",  \
                                            errno_save, strerror(errno_save)); \
         snprintf(buf+strlen(buf), ERR_BUFSIZ-strlen(buf),  "\n");             \
-        fprintf(log_file, buf); fflush(log_file);                             \
+        fprintf(log_file, "%s", buf); fflush(log_file);                       \
         errno = errno_save;                                                   \
     }                                                                         \
 } while (0)
@@ -118,7 +118,7 @@ do {                                                                          \
                  "%s(%u) %s(%u): ", log_label, getpid(), __FILE__, __LINE__); \
             snprintf(buf+strlen(buf), DBG_BUFSIZ-strlen(buf), __VA_ARGS__);   \
             snprintf(buf+strlen(buf), DBG_BUFSIZ-strlen(buf),  "\n");         \
-            fprintf(log_file, buf); fflush(log_file);                         \
+            fprintf(log_file, "%s", buf); fflush(log_file);                   \
             errno = errno_save;                                               \
         }                                                                     \
     }                                                                         \
