@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -40,11 +40,6 @@
 
 #define FIND_CANCEL (-1)
 #define FIND_EXIT   (-2)
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: list.c,v 1.23 2017/07/18 18:34:20 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 static char **S       = NULL;
 static int    S_count = 0;

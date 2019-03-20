@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -24,11 +24,6 @@
 
 #include "miso.h"
 #include "log.h"
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: args.c,v 1.12 2012/05/22 20:31:28 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 int check_only = 0;
 

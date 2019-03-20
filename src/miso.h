@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -17,8 +17,6 @@
  * You should have received a copy of the GNU General Public License
  * along with Miso.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-/*  $Id: miso.h,v 2.70 2017/07/21 15:21:51 zma0472 Exp $  */
 
 #ifndef _MISO_H
 

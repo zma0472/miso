@@ -48,11 +48,6 @@
  *  Reformatted original BSD code, renamed (libc) strsep() to str_sep(). -- mqa
  */
 
-#ifndef LINT
-static char rcsid[] =
-"$Id: lib.c,v 1.1 2012/03/05 19:38:52 mqalton Exp $";
-#endif  /*  !defined LINT  */
-
 char *
 str_sep(char **stringp, const char *delim)
 {

@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -29,11 +29,6 @@
 
 #include "miso.h"
 #include "log.h"
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: field.c,v 1.33 2017/07/21 18:21:15 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 static int
 io_boolean(int row, int interact, field_t *f)

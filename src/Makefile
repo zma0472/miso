@@ -1,6 +1,6 @@
 
 # 
-#  Copyright (C) 2011,2012 Matthew and Janice Alton
+#  Copyright (C) 2011,2012,2019 Matthew Alton
 # 
 #  This file is part of Miso.
 # 
@@ -18,11 +18,6 @@
 #  along with Miso.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-#  $Id: Makefile,v 1.27 2012/05/22 20:40:58 zma0472 Exp $
-
-#CC       = /opt/oracle/solstudio12.2/bin/cc
-#CC       = /opt/SolarisStudio12.2-linux-x86-tar-ML/solstudio12.2/bin/cc
-#CC       = /opt/open64-4.2.4/bin/opencc-4.2.4
 CC       = gcc
 #CFLAGS   = -g -ansi -Wall
 CFLAGS   = -g

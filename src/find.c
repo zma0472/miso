@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -38,11 +38,6 @@
 #define MIN_X  80
 
 #define BUF_SIZE 1024
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: find.c,v 1.8 2017/07/18 18:36:18 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 void
 find_value(field_t *f)

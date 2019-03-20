@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -22,11 +22,6 @@
 #include <stdlib.h>
 
 #include "miso.h"
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: main.c,v 1.18 2017/06/25 18:03:13 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 char *schema = DEFAULT_SCHEMA;
 char  field_separator = DEFAULT_OFS;

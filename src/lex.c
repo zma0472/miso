@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -60,11 +60,6 @@ do {                                     \
         LL_FAIL;                         \
     }                                    \
 } while (0)
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: lex.c,v 1.13 2012/05/22 20:31:28 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 static int
 str2token(const char *s)

@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -30,11 +30,6 @@
 #include "log.h"
 #include "lex.h"
 #include "parse.h"
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: parse.c,v 1.22 2012/05/22 20:31:28 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 item_t **item = NULL;
 

@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2011,2012 Matthew and Janice Alton
+ * Copyright (C) 2011,2012,2019 Matthew Alton
  *
  * This file is part of Miso.
  *
@@ -28,11 +28,6 @@
 #define MIN_X 80
 
 #define TOP_ROW 6
-
-#ifndef LINT
-static char rcsid[] =
-"$Id: form.c,v 1.18 2012/05/22 20:31:28 zma0472 Exp $";
-#endif  /*  !defined LINT  */
 
 int
 form_valid(void)
