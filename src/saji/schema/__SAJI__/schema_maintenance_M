@@ -4,8 +4,6 @@
 #  Saji schema maintenance menu schema.
 #
 
-#  $Id$
-
 MENU:
     title = 'Miso Schema Maintenance'
 

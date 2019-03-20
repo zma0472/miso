@@ -4,8 +4,6 @@
 #  Form 'change_schema' schema file.
 #
 
-#  $Id$
-
 FORM:
     title = 'Change / Show Characteristics of a Miso Schema'
 
