@@ -4,8 +4,6 @@
 #  Form 'chuser' schema file.
 #
 
-#  $Id: chuser.miso,v 1.7 2011/11/17 20:17:42 netmqorg Exp mqalton $
-
 FORM:
     title = 'Change / Show Characteristics of a User'
 

@@ -4,8 +4,6 @@
 #  Date application schema file.
 #
 
-#  $Id$
-
 FORM:
     title = 'Apply for a DATE With Meekel'
 

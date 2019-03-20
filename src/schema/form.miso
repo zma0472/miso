@@ -3,8 +3,6 @@
 #  Development FORM configuration file.
 #
 
-#  $Id: form.miso,v 1.2 2011/10/18 22:02:45 netmqorg Exp $
-
 FORM:
     title = 'Development FORM'
 

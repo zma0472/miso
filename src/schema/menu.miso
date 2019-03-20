@@ -3,8 +3,6 @@
 #  Development MENU configuration file.
 #
 
-#  $Id: menu.miso,v 1.1 2011/10/11 20:13:44 mqalton Exp $
-
 MENU:
     title = 'System Management'
 

@@ -4,8 +4,6 @@
 #  Form 'useradd' schema file.
 #
 
-#  $Id$
-
 FORM:
     title = 'ADD a User'
 
